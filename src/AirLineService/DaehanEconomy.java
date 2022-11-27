@@ -1,6 +1,10 @@
 package AirLineService;
 
 public class DaehanEconomy extends DaehanAirLine{
+	DaehanEconomy(){
+		
+	}
+	
 	DaehanEconomy(int passengerNum){
 		this.passengerNum = passengerNum;
 	}

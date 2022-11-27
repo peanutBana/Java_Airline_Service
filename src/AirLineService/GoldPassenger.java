@@ -4,8 +4,8 @@ public class GoldPassenger extends Passenger{
 	
 	public double saleRatio;	//할인율
 	
-	GoldPassenger(String passengerName, String passPortNum){
-		super(passengerName, passPortNum);
+	GoldPassenger(String passengerName, int passengerID,String passPortNum){
+		super(passengerName, passengerID, passPortNum);
 		super.passengerGrade = "GOLD";
 		super.mileageRatio= 0.02; 
 		this.saleRatio = 0.1;

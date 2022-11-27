@@ -1,15 +1,10 @@
 package AirLineService;
 
-import java.util.Date;
-
 public class AsianaAirLine extends AirLine{
 
-	Date departDate = new Date();
-	Date arriveDate = new Date();
-	
 	public String seatLevel;		//좌석 등급
 	int passengerNum;
-	public int ticketPrice = 1000000;
+	String AirLineName = "아시아나";
 	
 	AsianaAirLine(){
 		defaultAirLine();

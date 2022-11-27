@@ -1,6 +1,6 @@
 package AirLineService;
 
-abstract class AirLine {
+public class AirLine{
 	public String seatLevelseatLevel;		//항공사 이름
 	public String departRegion;		//출발지 
 	public String arriveRegion;		//도착지

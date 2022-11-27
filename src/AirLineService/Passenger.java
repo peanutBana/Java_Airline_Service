@@ -2,6 +2,7 @@ package AirLineService;
 
 public class Passenger{
 	protected String passengerName;		//승객 이름  
+	protected int passengerID;		//승객 ID  
 	protected String passPortNum;		//여권 번호
 	protected String passengerGrade;	//승객 등급	
 	protected int mileage;				//마일리지
@@ -13,7 +14,7 @@ public class Passenger{
 		defaultPassenger();
 	}
 	
-	public Passenger(String passengerName, String passPortNum) {
+	public Passenger(String passengerName, int passengerID, String passPortNum) {
 		this.passengerName = passengerName;
 		this.passPortNum = passPortNum;
 		defaultPassenger();

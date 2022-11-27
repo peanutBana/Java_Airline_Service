@@ -2,6 +2,9 @@ package AirLineService;
 
 //비즈니스
 	public class AsianaBusiness extends AsianaAirLine{
+		AsianaBusiness(){
+		}
+		
 		AsianaBusiness(int passengerNum){
 			this.passengerNum = passengerNum;
 		}

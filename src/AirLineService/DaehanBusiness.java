@@ -2,6 +2,8 @@ package AirLineService;
 
 //비즈니스
 	public class DaehanBusiness extends DaehanAirLine{
+		DaehanBusiness(){}
+		
 		DaehanBusiness(int passengerNum){
 			this.passengerNum = passengerNum;
 		}

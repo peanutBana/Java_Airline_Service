@@ -4,8 +4,8 @@ public class VIPPassenger extends Passenger{
 	
 	public double saleRatio;
 	
-	VIPPassenger(String passengerName, String passPortNum){
-		super(passengerName, passPortNum);
+	VIPPassenger(String passengerName,int passengerID, String passPortNum){
+		super(passengerName, passengerID, passPortNum);
 		super.passengerGrade = "GOLD";
 		super.mileageRatio= 0.03; 
 		this.saleRatio = 0.2;
