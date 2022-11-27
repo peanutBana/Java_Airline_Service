@@ -9,8 +9,12 @@ public class DaehanAirLine extends AirLine{
 		seatLevel = "economy";		//좌석 등급
 	}
 	
-	DaehanAirLine(String airPlaneType, int passengerNum){
-		this.airPlaneType = airPlaneType;
+	DaehanAirLine(int passengerNum){
 		this.passengerNum = passengerNum;
 	}
+	
+	public int calcTicketPrice(int ticketPrice) {
+		return ticketPrice;
+	}	
+		
 }

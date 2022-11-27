@@ -1,6 +1,6 @@
 package AirLineService;
 
-public class Passenger {
+public class Passenger{
 	protected String passengerName;		//승객 이름  
 	protected String passPortNum;		//여권 번호
 	protected String passengerGrade;	//승객 등급	

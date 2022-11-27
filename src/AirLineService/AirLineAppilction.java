@@ -15,13 +15,11 @@ public class AirLineAppilction {
 		GoldPassenger PassengerNa= new GoldPassenger("나상호", "M15509732");
 		VIPPassenger PassengerSon = new VIPPassenger("손흥민", "M40329253");
 		
-		AirLine asianaEconomy = new AsianaAirLine("lowCost", "economy");
-		AirLine asianaBusiness= new AsianaAirLine("aisana", "business");
-		AirLine daehanEconomy = new DaehanAirLine("daehan", "economy");
-		AirLine daehanEconomy = new DaehanAirLine("daehan", "economy");
-		
-		
-		
+		//AirLine 객체 생성
+		AirLine asianaEconomy = new AsianaEconomy(2);
+		AirLine asianaBusiness= new AsianaBusiness(1);
+		AirLine daehanEconomy = new DaehanEconomy(3);
+		AirLine daehanBusiness = new DaehanBusiness(1);
 		
 	}
 }

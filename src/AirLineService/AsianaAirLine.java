@@ -9,14 +9,18 @@ public class AsianaAirLine extends AirLine{
 	
 	public String seatLevel;		//좌석 등급
 	int passengerNum;
+	public int ticketPrice = 1000000;
 	
 	AsianaAirLine(){
 		defaultAirLine();
 		seatLevel = "economy";		//좌석 등급
 	}
 	
-	AsianaAirLine(String airPlaneType, int passengerNum){
-		this.airPlaneType = airPlaneType;
+	AsianaAirLine(int passengerNum){
 		this.passengerNum = passengerNum;
+	}
+	
+	public int calcTicketPrice(int ticketPrice) {
+		return ticketPrice;
 	}
 }
