@@ -3,6 +3,8 @@ package AirLineService;
 //비즈니스
 	public class AsianaBusiness extends AsianaAirLine{
 		AsianaBusiness(){
+			defaultAirLine();
+			seatLevel = "business";
 		}
 		
 		AsianaBusiness(int passengerNum){

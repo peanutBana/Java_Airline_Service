@@ -6,20 +6,32 @@ import java.util.Scanner;
 public class AirLineAppilction {
 	//항공권 예약티켓 정보저장할 ArrayList 생성
 	private static ArrayList<Ticketing> ticketList = new ArrayList<Ticketing>();
-	private static ArrayList<Passenger> passengerList = new ArrayList<Passenger>();
-	private static ArrayList<Passenger> airLineList = new ArrayList<Passenger>();
 	static Scanner sc = new Scanner(System.in);
 	static boolean status = true;
 	
 	//method
 	public static void showAllPassengerInfo() {
-		for(Passenger p : passengerList) {
-			System.out.println(p.passengerName + "님의 승객정보");
-			System.out.println("ID번호: " + p.passengerID + " | 여권번호 : " + p.passPortNum);
-			System.out.println("");
-			
+		for(Ticketing ticket : ticketList) {
+			ticket.showAllPassengerInfo();
 		}
 	}
+
+//	public static Passenger findPassenger(int passengerID) {
+//		Passenger resultPassenger = null;
+//		for(Passenger p : passengerList) {
+//			if(p.passengerID == passengerID ) {
+//				resultPassenger = p;
+//			}
+//		}
+//		return resultPassenger;
+//	}
+	
+//	public static void showReservationInfo() {
+//		int findPassengerID = sc.nextInt();
+//		Passenger fP = findPassenger(findPassengerID);
+//		System.out.println(fP.passengerName + "님의 항공권 정보");
+//		System.out.println();
+//	}
 
 	public static void main(String[] args) {
 		//Passenger 생성
@@ -29,12 +41,6 @@ public class AirLineAppilction {
 		Passenger PassengerNa= new GoldPassenger("나상호", 10004, "M15509732");
 		Passenger PassengerSon = new VIPPassenger("손흥민", 10005, "M40329253");
 		
-		//passengerList에 추가
-		passengerList.add(PassengerLee);
-		passengerList.add(PassengerKim);
-		passengerList.add(PassengerHwang);
-		passengerList.add(PassengerNa);
-		passengerList.add(PassengerSon);
 		
 		//AirLine 객체 생성
 		AirLine asianaEconomy = new AsianaEconomy();
@@ -43,11 +49,11 @@ public class AirLineAppilction {
 		AirLine daehanBusiness = new DaehanBusiness();
 		
 		//Ticketing 객체 생성
-		Ticketing t1 = new Ticketing();
-		Ticketing t2 = new Ticketing();
-		Ticketing t3 = new Ticketing();
-		Ticketing t4 = new Ticketing();
-		Ticketing t5 = new Ticketing();
+		Ticketing t1 = new Ticketing(PassengerLee, asianaEconomy);
+		Ticketing t2 = new Ticketing(PassengerKim, asianaBusiness);
+		Ticketing t3 = new Ticketing(PassengerHwang, daehanEconomy);
+		Ticketing t4 = new Ticketing(PassengerNa, daehanBusiness);
+		Ticketing t5 = new Ticketing(PassengerSon, asianaBusiness);
 //		t5.ticketing(PassengerSon, daehanBusiness);
 		
 		//ticketList에 삽입
@@ -59,13 +65,19 @@ public class AirLineAppilction {
 		
 		while(status) {
 			System.out.println("--------------------------------------------");
-			System.out.println("1.전체 승객 정보 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료");
+			System.out.println("1.전체 승객 정보 | 2.승객 예매 정보 | 3.승객 예매 정보 삭제 | 4. 종료");
 			System.out.println("--------------------------------------------");
 			System.out.print("선택 > "); int choice = sc.nextInt() ;
 			
 			switch(choice) {
 			case 1:
 				showAllPassengerInfo();
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
 				break;
 			case 4:
 				System.out.println("프로그램 종료");

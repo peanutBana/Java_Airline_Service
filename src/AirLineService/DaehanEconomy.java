@@ -2,7 +2,8 @@ package AirLineService;
 
 public class DaehanEconomy extends DaehanAirLine{
 	DaehanEconomy(){
-		
+		defaultAirLine();
+		seatLevel = "economy";
 	}
 	
 	DaehanEconomy(int passengerNum){
