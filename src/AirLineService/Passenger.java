@@ -1,23 +1,34 @@
 package AirLineService;
 
+import java.util.ArrayList;
+
 public class Passenger{
-	protected String passengerName;		//승객 이름  
-	protected int passengerID;		//승객 ID  
-	protected String passPortNum;		//여권 번호
+	private String passengerName;		//승객 이름  
+	private int passengerID;		//승객 ID  
+	private String passPortNum;		//여권 번호
 	protected String passengerGrade;	//승객 등급	
-	protected int mileage;				//마일리지
-	public double mileageRatio;  		//마일리지 적립비율
+	private int mileage;				//마일리지
+	protected double mileageRatio;  		//마일리지 적립비율
+	
+	private ArrayList<Ticket> tickets;
 	
 	
 	//생성
 	public Passenger() {
 		defaultPassenger();
+		tickets = new ArrayList<Ticket>(); 
 	}
 	
 	public Passenger(String passengerName, int passengerID, String passPortNum) {
 		this.passengerName = passengerName;
 		this.passPortNum = passPortNum;
+		this.passPortNum = passPortNum;
+		tickets = new ArrayList<Ticket>(); 
 		defaultPassenger();
+	}
+	
+	public void addTicket(Ticket ticket) {
+		tickets.add(ticket);
 	}
 	
 	//기본 등급 승객 정보
@@ -35,39 +46,5 @@ public class Passenger{
 		return passengerName + "님의 등급: " + passengerGrade + ", 적립 마일리지: " + mileage + "마일리지"; 
 	}
 
-	public String getPassengerName() {
-		return passengerName;
-	}
-
-	public void setPassengerName(String passengerName) {
-		this.passengerName = passengerName;
-	}
-
-	public String getPassPortNum() {
-		return passPortNum;
-	}
-
-	public void setPassPortNum(String passPortNum) {
-		this.passPortNum = passPortNum;
-	}
-
-	public String getPassengerGrade() {
-		return passengerGrade;
-	}
-
-	public void setPassengerGrade(String passengerGrade) {
-		this.passengerGrade = passengerGrade;
-	}
-
-	public int getMileage() {
-		return mileage;
-	}
-
-	public void setMileage(int mileage) {
-		this.mileage = mileage;
-	}
-	
-	
-	
 	
 }

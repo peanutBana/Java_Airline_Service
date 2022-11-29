@@ -5,15 +5,37 @@ import java.util.Scanner;
 
 public class AirLineAppilction {
 	//항공권 예약티켓 정보저장할 ArrayList 생성
-	private static ArrayList<Ticketing> ticketList = new ArrayList<Ticketing>();
+	private static ArrayList<Ticket> ticketList = new ArrayList<Ticket>();
 	static Scanner sc = new Scanner(System.in);
 	static boolean status = true;
 	
 	//method
 	public static void showAllPassengerInfo() {
-		for(Ticketing ticket : ticketList) {
-			ticket.showAllPassengerInfo();
+		for(Ticket ticket : ticketList) {
+			
 		}
+	}
+	
+	public static Passenger makePassenger() {
+		System.out.print("승객 이름을 입력하세요: ");
+		String pName = sc.next();
+		System.out.print("id번호를 입력하세요: ");
+		int pID = sc.nextInt();
+		System.out.print("여권번호를 입력하세요: ");
+		String pPnum = sc.next();	
+		Passenger p = new Passenger(pName, pID ,pPnum);
+		return p;
+	}
+	
+	public static AirLine makeAirLine() {
+		System.out.print("승객 이름을 입력하세요: ");
+		String airLineName = sc.next();
+		System.out.print("승객 이름을 입력하세요: ");
+		String departRegion = sc.next();
+		System.out.print("승객 이름을 입력하세요: ");
+		String arriveRegion = sc.next();
+		
+		return null;
 	}
 
 //	public static Passenger findPassenger(int passengerID) {
@@ -49,12 +71,11 @@ public class AirLineAppilction {
 		AirLine daehanBusiness = new DaehanBusiness();
 		
 		//Ticketing 객체 생성
-		Ticketing t1 = new Ticketing(PassengerLee, asianaEconomy);
-		Ticketing t2 = new Ticketing(PassengerKim, asianaBusiness);
-		Ticketing t3 = new Ticketing(PassengerHwang, daehanEconomy);
-		Ticketing t4 = new Ticketing(PassengerNa, daehanBusiness);
-		Ticketing t5 = new Ticketing(PassengerSon, asianaBusiness);
-//		t5.ticketing(PassengerSon, daehanBusiness);
+		Ticket t1 = new Ticket(PassengerLee, asianaEconomy);
+		Ticket t2 = new Ticket(PassengerKim, asianaBusiness);
+		Ticket t3 = new Ticket(PassengerHwang, daehanEconomy);
+		Ticket t4 = new Ticket(PassengerNa, daehanBusiness);
+		Ticket t5 = new Ticket(PassengerSon, asianaBusiness);
 		
 		//ticketList에 삽입
 		ticketList.add(t1);

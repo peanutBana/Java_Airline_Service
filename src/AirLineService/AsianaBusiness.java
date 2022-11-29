@@ -1,14 +1,18 @@
 package AirLineService;
 
 //비즈니스
-	public class AsianaBusiness extends AsianaAirLine{
+	public class AsianaBusiness extends AirLine{
 		AsianaBusiness(){
 			defaultAirLine();
 			seatLevel = "business";
+			super.airLineName = "아시아나항공";
 		}
 		
-		AsianaBusiness(int passengerNum){
-			this.passengerNum = passengerNum;
+		AsianaBusiness(String airLineName, String departRegion, String arriveRegion){
+			super.airLineName = "아시아나항공";
+			this.airLineName = airLineName;
+			super.departRegion = departRegion;
+			super.arriveRegion = arriveRegion;
 		}
 		
 		@Override

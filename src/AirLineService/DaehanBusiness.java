@@ -1,14 +1,17 @@
 package AirLineService;
 
 //비즈니스
-	public class DaehanBusiness extends DaehanAirLine{
+	public class DaehanBusiness extends AirLine{
 		DaehanBusiness(){
 			defaultAirLine();
 			seatLevel = "business";
 		}
 		
-		DaehanBusiness(int passengerNum){
-			this.passengerNum = passengerNum;
+		DaehanBusiness(String airLineName, String departRegion, String arriveRegion){
+			super.airLineName = "대한항공";
+			this.airLineName = airLineName;
+			super.departRegion = departRegion;
+			super.arriveRegion = arriveRegion;
 		}
 			
 		@Override
