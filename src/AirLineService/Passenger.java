@@ -1,6 +1,7 @@
 package AirLineService;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Passenger{
 	private String passengerName;		//승객 이름  
@@ -11,6 +12,7 @@ public class Passenger{
 	protected double mileageRatio;  		//마일리지 적립비율
 	
 	private ArrayList<Ticket> tickets;
+	static Scanner sc = new Scanner(System.in);
 	
 	
 	//생성
@@ -21,7 +23,7 @@ public class Passenger{
 	
 	public Passenger(String passengerName, int passengerID, String passPortNum) {
 		this.passengerName = passengerName;
-		this.passPortNum = passPortNum;
+		this.passengerID = passengerID;
 		this.passPortNum = passPortNum;
 		tickets = new ArrayList<Ticket>(); 
 		defaultPassenger();
@@ -46,5 +48,54 @@ public class Passenger{
 		return passengerName + "님의 등급: " + passengerGrade + ", 적립 마일리지: " + mileage + "마일리지"; 
 	}
 
+	public String getPassengerName() {
+		return passengerName;
+	}
+
+	public void setPassengerName(String passengerName) {
+		this.passengerName = passengerName;
+	}
+
+	public int getPassengerID() {
+		return passengerID;
+	}
+
+	public void setPassengerID(int passengerID) {
+		this.passengerID = passengerID;
+	}
+
+	public String getPassPortNum() {
+		return passPortNum;
+	}
+
+	public void setPassPortNum(String passPortNum) {
+		this.passPortNum = passPortNum;
+	}
+
+	public String getPassengerGrade() {
+		return passengerGrade;
+	}
+
+	public void setPassengerGrade(String passengerGrade) {
+		this.passengerGrade = passengerGrade;
+	}
+
+	public int getMileage() {
+		return mileage;
+	}
+
+	public void setMileage(int mileage) {
+		this.mileage = mileage;
+	}
+
+	public ArrayList<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(ArrayList<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+
+	
 	
 }

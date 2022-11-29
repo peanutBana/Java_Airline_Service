@@ -15,6 +15,12 @@ package AirLineService;
 		}
 
 		@Override
+		public void addTicket(Ticket ticket) {
+			// TODO Auto-generated method stub
+			super.addTicket(ticket);
+		}
+		
+		@Override
 		public int calcTicketPrice(int ticketPrice) {
 			return ticketPrice;
 		}

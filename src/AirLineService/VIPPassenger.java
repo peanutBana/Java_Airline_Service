@@ -10,6 +10,8 @@ public class VIPPassenger extends Passenger{
 		super.mileageRatio= 0.03; 
 		this.saleRatio = 0.2;
 	}
+	
+	
 
 	@Override
 	public int calcTicketPrice(int price) {

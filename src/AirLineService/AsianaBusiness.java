@@ -15,6 +15,13 @@ package AirLineService;
 			super.arriveRegion = arriveRegion;
 		}
 		
+		
+		@Override
+		public void addTicket(Ticket ticket) {
+			// TODO Auto-generated method stub
+			super.addTicket(ticket);
+		}
+
 		@Override
 		public int calcTicketPrice(int ticketPrice) {
 			return(int)(ticketPrice*1.5);	//이코노미 1.5배 가격

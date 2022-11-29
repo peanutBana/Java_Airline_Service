@@ -12,7 +12,10 @@ public class AirLineAppilction {
 	//method
 	public static void showAllPassengerInfo() {
 		for(Ticket ticket : ticketList) {
-			
+			System.out.println("["+ticket.getPassenger().getPassengerName()+"]님의 예약정보");
+			System.out.println("승객ID: "+ticket.getPassenger().getPassengerID()+" | 여권번호: "+ticket.getPassenger().getPassPortNum());
+			System.out.println("항공사: "+ticket.getAirLine().airLineName+" | 출발지: "+ticket.getAirLine().departRegion+" | 도착지: "+ticket.getAirLine().arriveRegion);
+			System.out.println();
 		}
 	}
 	
@@ -28,32 +31,26 @@ public class AirLineAppilction {
 	}
 	
 	public static AirLine makeAirLine() {
-		System.out.print("승객 이름을 입력하세요: ");
+		System.out.print("항공사를 입력하세요: ");
 		String airLineName = sc.next();
-		System.out.print("승객 이름을 입력하세요: ");
+		System.out.print("출발지를 입력하세요: ");
 		String departRegion = sc.next();
-		System.out.print("승객 이름을 입력하세요: ");
+		System.out.print("도착지를 입력하세요: ");
 		String arriveRegion = sc.next();
-		
-		return null;
+		AirLine a = new AirLine(airLineName,departRegion,arriveRegion);
+		return a;
+	}
+	
+	public static void makeTicket() {
+		Passenger p = makePassenger();
+		AirLine a =  makeAirLine();
+		Ticket t = new Ticket(p,a);
+		ticketList.add(t);
 	}
 
-//	public static Passenger findPassenger(int passengerID) {
-//		Passenger resultPassenger = null;
-//		for(Passenger p : passengerList) {
-//			if(p.passengerID == passengerID ) {
-//				resultPassenger = p;
-//			}
-//		}
-//		return resultPassenger;
-//	}
+//	public static Passenger findPassenger(int passengerID) {}
 	
-//	public static void showReservationInfo() {
-//		int findPassengerID = sc.nextInt();
-//		Passenger fP = findPassenger(findPassengerID);
-//		System.out.println(fP.passengerName + "님의 항공권 정보");
-//		System.out.println();
-//	}
+//	public static void showReservationInfo() {}
 
 	public static void main(String[] args) {
 		//Passenger 생성
@@ -86,7 +83,7 @@ public class AirLineAppilction {
 		
 		while(status) {
 			System.out.println("--------------------------------------------");
-			System.out.println("1.전체 승객 정보 | 2.승객 예매 정보 | 3.승객 예매 정보 삭제 | 4. 종료");
+			System.out.println("1.전체 승객 정보 | 2.승객 예매 정보 | 3.승객 예매정보 추가 | 4. 종료");
 			System.out.println("--------------------------------------------");
 			System.out.print("선택 > "); int choice = sc.nextInt() ;
 			
@@ -98,7 +95,7 @@ public class AirLineAppilction {
 				
 				break;
 			case 3:
-				
+				makeTicket();
 				break;
 			case 4:
 				System.out.println("프로그램 종료");

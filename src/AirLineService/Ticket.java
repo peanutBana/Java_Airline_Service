@@ -4,8 +4,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Ticket{
-	private Passenger passenger;
-	private AirLine airLine;
+	private  Passenger passenger;
+	private  AirLine airLine;
 	
 	private Date date = new Date();
 	
@@ -17,6 +17,11 @@ public class Ticket{
 		this.passenger.addTicket(this);
 		this.airLine.addTicket(this);
 	}
+	
+//	public static void showAllInfo() {
+//		System.out.println(passenger.getPassengerName() + "," + passenger.getPassengerID() +", "+passenger.getPassPortNum());
+//		System.out.println(airLine.airLineName + "," + airLine.departRegion +", "+airLine.arriveRegion);
+//	}
 
 	public Passenger getPassenger() {
 		return passenger;

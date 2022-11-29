@@ -1,6 +1,8 @@
 package AirLineService;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class AirLine{
 	public String airLineName;		//항공사 이름
@@ -8,7 +10,16 @@ public class AirLine{
 	protected String arriveRegion;		//도착지
 	public String seatLevel;		//좌석 등급
 	
+	public ArrayList<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(ArrayList<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+
 	private ArrayList<Ticket> tickets;
+	static Scanner sc = new Scanner(System.in);
 	
 	AirLine(){
 		defaultAirLine();
@@ -22,6 +33,7 @@ public class AirLine{
 		defaultAirLine();
 	}
 	
+	
 	public void addTicket(Ticket ticket) {
 		tickets.add(ticket);
 	}
@@ -34,4 +46,5 @@ public class AirLine{
 	public int calcTicketPrice(int ticketPrice) {
 		return ticketPrice;
 	}
+	
 }
