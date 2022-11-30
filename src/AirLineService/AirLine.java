@@ -10,6 +10,9 @@ public class AirLine{
 	protected String arriveRegion;		//도착지
 	public String seatLevel;		//좌석 등급
 	
+	private ArrayList<Ticket> tickets;
+	static Scanner sc = new Scanner(System.in);
+	
 	public ArrayList<Ticket> getTickets() {
 		return tickets;
 	}
@@ -18,8 +21,6 @@ public class AirLine{
 		this.tickets = tickets;
 	}
 
-	private ArrayList<Ticket> tickets;
-	static Scanner sc = new Scanner(System.in);
 	
 	AirLine(){
 		defaultAirLine();
@@ -33,15 +34,15 @@ public class AirLine{
 		defaultAirLine();
 	}
 	
+	public void defaultAirLine(){
+		departRegion = "SouthKorea";
+		arriveRegion = "Quatar";
+	}
 	
 	public void addTicket(Ticket ticket) {
 		tickets.add(ticket);
 	}
 	
-	public void defaultAirLine(){
-		departRegion = "SouthKorea";
-		arriveRegion = "Quatar";
-	}
 	
 	public int calcTicketPrice(int ticketPrice) {
 		return ticketPrice;

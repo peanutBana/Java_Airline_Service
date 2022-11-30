@@ -5,6 +5,7 @@ package AirLineService;
 		DaehanBusiness(){
 			defaultAirLine();
 			seatLevel = "business";
+			super.airLineName = "대한항공";
 		}
 		
 		DaehanBusiness(String airLineName, String departRegion, String arriveRegion){

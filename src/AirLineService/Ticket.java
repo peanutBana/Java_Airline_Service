@@ -1,13 +1,9 @@
 package AirLineService;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class Ticket{
 	private  Passenger passenger;
 	private  AirLine airLine;
 	
-	private Date date = new Date();
 	
 	Ticket(){};
 	
@@ -17,11 +13,6 @@ public class Ticket{
 		this.passenger.addTicket(this);
 		this.airLine.addTicket(this);
 	}
-	
-//	public static void showAllInfo() {
-//		System.out.println(passenger.getPassengerName() + "," + passenger.getPassengerID() +", "+passenger.getPassPortNum());
-//		System.out.println(airLine.airLineName + "," + airLine.departRegion +", "+airLine.arriveRegion);
-//	}
 
 	public Passenger getPassenger() {
 		return passenger;
@@ -39,14 +30,4 @@ public class Ticket{
 		this.airLine = airLine;
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	
-	
 }

@@ -10,7 +10,7 @@ public class AirLineAppilction {
 	static boolean status = true;
 	
 	//method
-	public static void showAllPassengerInfo() {
+	public static void showAllPassengerInfo() {	//1. 모든 승객 예약 정보
 		for(Ticket ticket : ticketList) {
 			System.out.println("["+ticket.getPassenger().getPassengerName()+"]님의 예약정보");
 			System.out.println("승객ID: "+ticket.getPassenger().getPassengerID()+" | 여권번호: "+ticket.getPassenger().getPassPortNum());
@@ -19,7 +19,21 @@ public class AirLineAppilction {
 		}
 	}
 	
-	public static Passenger makePassenger() {
+	public static void showReservationInfo() {	//2. 승객 예매 정보(ID)
+		System.out.print("찾으려는 승객의 ID를 입력하세요: ");
+		int pID = sc.nextInt();
+		Passenger resultP = findPassenger(pID);
+		if( resultP == null) {
+			System.out.println("해당하는 승객정보가 존재하지 않습니다.");
+			System.out.println();
+		}
+		else {
+			System.out.println(findPassenger(pID).showPassengerInfo());		
+			System.out.println();
+		}
+	}	
+	
+	public static Passenger makePassenger() {	//3. 예약정보 생성
 		System.out.print("승객 이름을 입력하세요: ");
 		String pName = sc.next();
 		System.out.print("id번호를 입력하세요: ");
@@ -29,7 +43,6 @@ public class AirLineAppilction {
 		Passenger p = new Passenger(pName, pID ,pPnum);
 		return p;
 	}
-	
 	public static AirLine makeAirLine() {
 		System.out.print("항공사를 입력하세요: ");
 		String airLineName = sc.next();
@@ -40,18 +53,46 @@ public class AirLineAppilction {
 		AirLine a = new AirLine(airLineName,departRegion,arriveRegion);
 		return a;
 	}
-	
 	public static void makeTicket() {
 		Passenger p = makePassenger();
 		AirLine a =  makeAirLine();
 		Ticket t = new Ticket(p,a);
-		ticketList.add(t);
+
+		System.out.println("예약되었습니다.");
 	}
-
-//	public static Passenger findPassenger(int passengerID) {}
 	
-//	public static void showReservationInfo() {}
-
+	public static void removeReservation() {
+		System.out.print("id번호를 입력하세요: ");
+		int pID = sc.nextInt();
+		Passenger resultP = findPassenger(pID);
+		Ticket resultT = findTicketByID(pID);
+		if(resultP == null) {
+			System.out.println("해당하는 승객정보가 존재하지 않습니다.");
+			System.out.println();
+		}
+		else {
+			ticketList.remove(ticketList.indexOf(resultT));
+		}
+	}
+	public static Ticket findTicketByID(int ID) {
+		Ticket resultT = null;
+		for(Ticket t : ticketList) {
+			if(t.getPassenger() == findPassenger(ID)) {
+				resultT = t;
+			}
+		}
+		return resultT;
+	}
+	public static Passenger findPassenger(int passengerID) {
+		Passenger resultPassenger = null;
+		for(Ticket t : ticketList) {
+			if(t.getPassenger().getPassengerID() == passengerID) {
+				resultPassenger = t.getPassenger();
+			}
+		}
+		return resultPassenger;
+	}
+	
 	public static void main(String[] args) {
 		//Passenger 생성
 		Passenger PassengerLee = new Passenger("이강인", 10001 ,"M30286766");
@@ -82,9 +123,9 @@ public class AirLineAppilction {
 		ticketList.add(t5);
 		
 		while(status) {
-			System.out.println("--------------------------------------------");
-			System.out.println("1.전체 승객 정보 | 2.승객 예매 정보 | 3.승객 예매정보 추가 | 4. 종료");
-			System.out.println("--------------------------------------------");
+			System.out.println("---------------------------------------------------------");
+			System.out.println("1.전체 승객 정보 | 2.승객 예매 정보 | 3.승객 예매정보 추가 | 4.예약정보 삭제 | 5.종료");
+			System.out.println("---------------------------------------------------------");
 			System.out.print("선택 > "); int choice = sc.nextInt() ;
 			
 			switch(choice) {
@@ -92,12 +133,15 @@ public class AirLineAppilction {
 				showAllPassengerInfo();
 				break;
 			case 2:
-				
+				showReservationInfo();
 				break;
 			case 3:
 				makeTicket();
 				break;
 			case 4:
+				removeReservation();
+				break;
+			case 5:
 				System.out.println("프로그램 종료");
 				status = false;
 			}

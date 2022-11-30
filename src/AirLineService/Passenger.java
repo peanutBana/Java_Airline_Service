@@ -16,12 +16,12 @@ public class Passenger{
 	
 	
 	//생성
-	public Passenger() {
+	Passenger() {
 		defaultPassenger();
 		tickets = new ArrayList<Ticket>(); 
 	}
 	
-	public Passenger(String passengerName, int passengerID, String passPortNum) {
+	Passenger(String passengerName, int passengerID, String passPortNum) {
 		this.passengerName = passengerName;
 		this.passengerID = passengerID;
 		this.passPortNum = passPortNum;
