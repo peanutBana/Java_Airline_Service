@@ -33,31 +33,12 @@ public class AirLineAppilction {
 		}
 	}	
 	
-	public static Passenger makePassenger() {	//3. 예약정보 생성
-		System.out.print("승객 이름을 입력하세요: ");
-		String pName = sc.next();
-		System.out.print("id번호를 입력하세요: ");
-		int pID = sc.nextInt();
-		System.out.print("여권번호를 입력하세요: ");
-		String pPnum = sc.next();	
-		Passenger p = new Passenger(pName, pID ,pPnum);
-		return p;
-	}
-	public static AirLine makeAirLine() {
-		System.out.print("항공사를 입력하세요: ");
-		String airLineName = sc.next();
-		System.out.print("출발지를 입력하세요: ");
-		String departRegion = sc.next();
-		System.out.print("도착지를 입력하세요: ");
-		String arriveRegion = sc.next();
-		AirLine a = new AirLine(airLineName,departRegion,arriveRegion);
-		return a;
-	}
-	public static void makeTicket() {
-		Passenger p = makePassenger();
-		AirLine a =  makeAirLine();
-		Ticket t = new Ticket(p,a);
-
+	public static void makeTicket() {//3. 예약정보 생성
+		Ticket makeT = null;
+		Passenger p = Passenger.makePassenger();
+		AirLine a =  AirLine.makeAirLine();
+		makeT = new Ticket(p,a);
+		ticketList.add(makeT);
 		System.out.println("예약되었습니다.");
 	}
 	
@@ -83,6 +64,7 @@ public class AirLineAppilction {
 		}
 		return resultT;
 	}
+	
 	public static Passenger findPassenger(int passengerID) {
 		Passenger resultPassenger = null;
 		for(Ticket t : ticketList) {

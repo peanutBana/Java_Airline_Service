@@ -21,7 +21,6 @@ public class AirLine{
 		this.tickets = tickets;
 	}
 
-	
 	AirLine(){
 		defaultAirLine();
 		tickets = new ArrayList<Ticket>();
@@ -31,7 +30,19 @@ public class AirLine{
 		this.airLineName = airLineName;
 		this.departRegion = departRegion;
 		this.arriveRegion = arriveRegion;
+		tickets = new ArrayList<Ticket>(); 
 		defaultAirLine();
+	}
+	
+	public static AirLine makeAirLine() {
+		System.out.print("항공사를 입력하세요: ");
+		String airLineName = sc.next();
+		System.out.print("출발지를 입력하세요: ");
+		String departRegion = sc.next();
+		System.out.print("도착지를 입력하세요: ");
+		String arriveRegion = sc.next();
+		AirLine a = new AirLine(airLineName,departRegion,arriveRegion);
+		return a;
 	}
 	
 	public void defaultAirLine(){

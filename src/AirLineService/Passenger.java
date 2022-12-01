@@ -29,6 +29,17 @@ public class Passenger{
 		defaultPassenger();
 	}
 	
+	public static Passenger makePassenger() {	//3. 예약정보 생성
+		System.out.print("승객 이름을 입력하세요: ");
+		String pName = sc.next();
+		System.out.print("id번호를 입력하세요: ");
+		int pID = sc.nextInt();
+		System.out.print("여권번호를 입력하세요: ");
+		String pPnum = sc.next();	
+		Passenger p = new Passenger(pName, pID ,pPnum);
+		return p;
+	}
+	
 	public void addTicket(Ticket ticket) {
 		tickets.add(ticket);
 	}
