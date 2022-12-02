@@ -3,7 +3,6 @@ package AirLineService;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class AirLine{
 	public String airLineName;		//항공사 이름
 	protected String departRegion;		//출발지 
