@@ -75,6 +75,34 @@ public class AirLineAppilction {
 		return resultPassenger;
 	}
 	
+	public static void airLineApplication() {
+		while(status) {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("1.전체 승객 정보 | 2.승객 예매 정보 | 3.승객 예매정보 추가 | 4.예약정보 삭제 | 5.종료");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.print("선택 > "); 
+			int choice = sc.nextInt() ;
+			
+			switch(choice) {
+			case 1:
+				showAllPassengerInfo();
+				break;
+			case 2:
+				showReservationInfo();
+				break;
+			case 3:
+				makeTicket();
+				break;
+			case 4:
+				removeReservation();
+				break;
+			case 5:
+				System.out.println("프로그램 종료");
+				status = false;
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		//Passenger 생성
 		Passenger PassengerLee = new Passenger("이강인", 10001 ,"M30286766");
@@ -82,7 +110,6 @@ public class AirLineAppilction {
 		Passenger PassengerHwang = new GoldPassenger("황의조", 10003, "M173349972");
 		Passenger PassengerNa= new GoldPassenger("나상호", 10004, "M15509732");
 		Passenger PassengerSon = new VIPPassenger("손흥민", 10005, "M40329253");
-		
 		
 		//AirLine 객체 생성
 		AirLine asianaEconomy = new AsianaEconomy();
@@ -104,30 +131,7 @@ public class AirLineAppilction {
 		ticketList.add(t4);
 		ticketList.add(t5);
 		
-		while(status) {
-			System.out.println("---------------------------------------------------------");
-			System.out.println("1.전체 승객 정보 | 2.승객 예매 정보 | 3.승객 예매정보 추가 | 4.예약정보 삭제 | 5.종료");
-			System.out.println("---------------------------------------------------------");
-			System.out.print("선택 > "); int choice = sc.nextInt() ;
-			
-			switch(choice) {
-			case 1:
-				showAllPassengerInfo();
-				break;
-			case 2:
-				showReservationInfo();
-				break;
-			case 3:
-				makeTicket();
-				break;
-			case 4:
-				removeReservation();
-				break;
-			case 5:
-				System.out.println("프로그램 종료");
-				status = false;
-			}
-		}
+		airLineApplication();
 	}
 }
 
